@@ -32,15 +32,17 @@ class ChatScreen extends StatelessWidget {
                     color: Colors.white,
                     size: 30,
                   ),
+                  //parte do meio da app bar
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ProfilePicture(),
+                      ProfilePicture(image: user.profilePicture),
                       SizedBox(width: 20),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         // ignore: prefer_const_literals_to_create_immutables
                         children: <Widget>[
+                          //nome usuário
                           Text(
                             user.name,
                             style: TextStyle(
@@ -48,6 +50,7 @@ class ChatScreen extends StatelessWidget {
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold),
                           ),
+                          //idade suário
                           Row(
                             children: [
                               Text(
@@ -176,7 +179,8 @@ class ChatScreen extends StatelessWidget {
     );
   }
 
-  final user = User(age: 26, name: 'Guilherme');
+  final user = User(
+      age: 26, name: 'Guilherme', profilePicture: 'assets/images/perry.jpg');
 
   List<Message> chats = [
     Message(
